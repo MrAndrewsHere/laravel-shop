@@ -13,6 +13,7 @@ npm-debug.log
 yarn-error.log
 storage/invoice
 .php_cs.cache
+/.idea
 
 # Project exclude paths
 /storage/app/
