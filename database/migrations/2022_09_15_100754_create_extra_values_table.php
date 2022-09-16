@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFilterValuesTable extends Migration
+class CreateExtraValuesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -30,10 +30,6 @@ class CreateFilterValuesTable extends Migration
      */
     public function down()
     {
-//        Schema::table('filter_values',function (Blueprint $table){
-//            $table->dropForeign(['filter_id']);
-//            $table->dropIndex(['filter_id','value']);
-//        });
         Schema::dropIfExists('extra_values');
     }
 }

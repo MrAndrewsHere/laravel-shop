@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-use App\Actions\FilterProductExtra;
+use App\Models\utils\FilterProductExtra;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 

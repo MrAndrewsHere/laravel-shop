@@ -13,7 +13,7 @@ class Extra extends Model
 
     protected $fillable = ['name'];
 
-    public function extraValue(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function extras(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(ExtraValue::class, 'extra_id', 'id');
     }

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Products;
 
-
-use App\Enums\ExtraEnum;
+use App\Actions\FilteredProducts;
 use App\Http\Controllers\Controller;
-use App\Models\ExtraValue;
-use App\Models\Product;
+
 
 class ProductController extends Controller
 {
@@ -16,10 +14,6 @@ class ProductController extends Controller
             'city' => ['string', 'nullable'],
             'category' => ['string', 'nullable'],
         ]);
-        $data = array_filter($data, fn($i) => !!$i);
-        $products = Product::query()->with('extras')->FilterProductExtra($data)->paginate();
-        $cities = ExtraValue::extraOnly(ExtraEnum::city)->get();
-        $categories = ExtraValue::extraOnly(ExtraEnum::category)->get();
-        return view('products.index', ['products' => $products, 'cities' => $cities, 'categories' => $categories]);
+        return view('products.index', (new FilteredProducts())($data));
     }
 }
