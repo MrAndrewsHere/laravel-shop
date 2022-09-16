@@ -15,6 +15,4 @@ storage/invoice
 .php_cs.cache
 /.idea
 
-# Project exclude paths
-/storage/app/
-/storage/framework/
+
